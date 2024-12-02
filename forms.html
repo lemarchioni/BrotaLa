@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+   <html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+      
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css"> 
+
+      <title>Brota lá</title>
+   </head>
+
+   <body>
+      <main class="main__forms">
+         <div class="box">
+           <div class="inner__box">
+             <div class="forms__wrap">
+ 
+               <!--==================== WELCOME BACK ====================-->
+               
+               <form action="index.html" autocomplete="off" class="sign__in">
+   
+                 <div class="heading">
+                   <h2>Bem Vindo de Volta</h2>
+                   <h6>Ainda não possui uma conta?</h6>
+                   <a href="#" class="heading__toggle">Registre-se</a>
+                 </div>
+   
+                 <div class="actual__form">
+                   <div class="input__wrap">
+                     <input
+                       type="text"
+                       class="input__field"
+                       id="login-input"
+                       onkeyup="checkerLogin()"
+                       autocomplete="off"
+                       required
+                     />
+                     <label class="text__label">Username</label>
+                     <div id="icon5" class="icon"></div>
+                     <p class="error__msg" id="login-error">Username inválido</p>
+                     <p class="error__msg" id="login-notRegistered">Este username não está cadastrado</p>
+                     <p class="error__msg" id="empty-login" >O username não pode estar vazio</p>
+                   </div>
+   
+                   <div class="input__wrap">
+                     <input
+                       type="password"
+                       class="input__field"
+                       id="pass-login-input"
+                       onkeyup="checkerPassLogin()"
+                       autocomplete="off"
+                       required
+                     />
+                     <label class="text__label">Senha</label>
+                     <div id="icon6" class="icon"></div>
+                     <p class="error__msg" id="pass-login-error">Senha inválida</p>
+                     <p class="error__msg" id="empty-pass-login" >A senha não pode estar vazia</p>
+                   </div>
+ 
+                   <p class="warning__msg" id="warning-submit-login">Tem algo errado...</p>
+   
+                   <button type="button" class="sign__btn" onclick="return checkerFormLogin()">Entrar</button>
+   
+                   <p class="text">
+                     Esqueceu sua senha ou os dados de login?
+                     <a href="#">Obter ajuda</a> para logar
+                   </p>
+                 </div>
+               </form> 
+ 
+               <!--==================== GET STARTED NOW ====================-->
+   
+               <form action="forms.html" autocomplete="off" class="sign__up" id="formulario">
+   
+                 <div class="heading">
+                   <h2>Começar Agora</h2>
+                   <h6>Já possui uma conta?</h6>
+                   <a href="#" class="heading__toggle">Entrar</a>
+                 </div>
+   
+                 <div class="actual__form">
+                   <div class="input__wrap">
+                     <input
+                       type="text"
+                       class="input__field"
+                       id="username-input"
+                       onkeyup="checkerUser()"
+                       autocomplete="off"
+                       required
+                     />
+                     <label class="text__label" for="username-input">Username</label>
+                     <div id="icon1" class="icon"></div>
+                     <p class="error__msg" id="username-error">Coloque um username válido</p>
+                     <p class="error__msg" id="username-registered">Este username já está cadastrado</p>
+                     <p class="error__msg" id="empty-username" >O username não pode estar vazio</p>
+                   </div>
+                   
+   
+                   <div class="input__wrap">
+                     <input
+                       type="email"
+                       class="input__field"
+                       id="email-input"
+                       onkeyup="checkerEmail()"
+                       autocomplete="off"
+                       required
+                     />
+                     <label class="text__label" for="email-input">Email</label>
+                     <div id="icon2" class="icon"></div>
+                     <p class="error__msg" id="email-error">Coloque um email válido</p>
+                     <p class="error__msg" id="email-registered">Este email já está cadastrado</p>
+                     <p class="error__msg" id="empty-email" >O email não pode estar vazio</p>
+                   </div>
+ 
+                   <div class="input__wrap">
+                     <input
+                       type="email"
+                       class="input__field"
+                       id="email-input"
+                       onkeyup="checkerEmail()"
+                       autocomplete="off"
+                       required
+                     />
+                     <label class="text__label" for="email-input">Email</label>
+                     <div id="icon2" class="icon"></div>
+                     <p class="error__msg" id="email-error">Coloque um email válido</p>
+                     <p class="error__msg" id="email-registered">Este email já está cadastrado</p>
+                     <p class="error__msg" id="empty-email" >O email não pode estar vazio</p>
+                   </div>
+   
+                   <div class="input__wrap">
+                     <input
+                       type="password"
+                       class="input__field"
+                       id="password-input"
+                       onkeyup="checkerPass()"
+                       autocomplete="off"
+                       required
+                     />
+ 
+                     <label class="text__label" for="password-input">Senha</label>
+                     <div id="icon3" class="icon"></div>
+                     <p class="error__msg" id="password-error">Pelo menos 8 caracteres, letras maiúsculas, minúsculas, números e símbolos</p>
+                     <p class="error__msg" id="empty-password" >A senha não pode estar vazia</p>
+                   </div>
+ 
+                   <div class="input__wrap">
+                     <input
+                       type="password"
+                       class="input__field"
+                       id="verify-password"
+                       onkeyup="checkerVerify()"
+                       autocomplete="off"
+                       required
+                     />
+                     <label class="text__label" for="verify-password">Confirme sua Senha</label>
+                     <div id="icon4" class="icon"></div>
+                     <p class="error__msg" id="verify-password-error">As senhas devem ser iguais</p>
+                     <p class="error__msg" id="empty-verify-password" >Este campo não pode estar vazio</p>
+                   </div>
+ 
+                   <p class="warning__msg" id="warning-capslock"><span class="atention">Atenção:</span> Capslock Ligado</p>
+ 
+                   <p class="warning__msg" id="warning-submit">Por favor preencha os campos corretamente!</p>
+   
+                   <button type="button" class="__" onclick="return checkerForm()">Registrar-se</button>
+   
+                   <p class="text">
+                     Suas informações pessoais permanecem
+                     <span class="emphasis">particulares</span> e
+                     <span class="emphasis">seguras</span>
+                   </p>
+                 </div>
+               </form>
+             </div>
+ 
+             <!-- Carousel -->
+   
+             <div class="carousel">
+               <div class="images__wrapper">
+                 <img src="assets/img/slide-1.png" class="image img-1 show" alt="" />
+                 <img src="" class="image img-2" alt="" />
+               </div>
+   
+                 <div class="bullets">
+                   <span class="active" data-value="1"></span>
+                   <span data-value="2"></span>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </main>
+   
+     <!--=============== MAIN JS ===============-->
+     <script src="assets/js/main.js"></script>
+
+     <!--=============== VALIDATION JS ===============-->
+     <script src="assets/js/validation.js"></script>
+ </body>
+</html>

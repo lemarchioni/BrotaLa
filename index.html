@@ -20,20 +20,37 @@
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-            <a href="" class="nave__logo">
+            <a href="#" class="nave__logo">
                <img src="assets/img/logo.svg" alt="logo">
             </a>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
-                  
 
+                  <li class="nav__item">
+                     <a href="#home" class="nav__link">Home</a>
                   </li>
+
+                  <li class="nav__item">
+                     <a href="#new" class="nav__link">Novidades</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#about" class="nav__link">Sobre</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#favorite" class="nav__link">Favoritos</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#visit" class="nav__link">Contato</a>
+                  </li>
+
                </ul>
 
                <div class="nav__buttons">
-                  <a href="" class="nav__button-link">Login</a>
-                  <a href="" class="home__button">Criar Conta</a>
+                  <a href="forms.html" class="home__button">Entre ou Cadastre-se</a>
                </div>
 
                <!-- Close button -->
@@ -52,7 +69,7 @@
       <!--==================== MAIN ====================-->
       <main class="main">
          <!--==================== HOME ====================-->
-         <section class="home">
+         <section class="home" id="home">
             <div class="home__container container">
                <div class="home__content">
                   <div class="home__data">
@@ -71,10 +88,241 @@
                </div>
             </div>
          </section>
-      </main>
+   
+
+      <!--==================== NEWS ====================-->
+      <section class="new section" id="new">
+         <h2 class="section__title">Novidades</h2>
+
+         <div class="new__container container grid">
+            <div class="new__content grid">
+               <article class="new__card">
+                  <div class="new__data">
+                     <h2 class="new__title">Caixas de Frutas da Estação</h2>
+                     <p class="new__description">Seleção especial de frutas fresquinhas direto do produtor!</p>
+                  </div>
+                  <img src="assets/img/new-1.png" alt="image" class="new__img">
+               </article>
+
+               <article class="new__card">
+                  <div class="new__data">
+                     <h2 class="new__title">Cestas de Hortaliças</h2>
+                     <p class="new__description">Hortaliças cultivadas com carinho e sem agrotóxicos.</p>
+                  </div>
+                  <img src="assets/img/new-2.png" alt="image" class="new__img">
+               </article>
+
+               <article class="new__card">
+                  <div class="new__data">
+                     <h2 class="new__title">Mel Artesanal</h2>
+                     <p class="new__description">Doce e natural, direto das colmeias locais.</p>
+                  </div>
+                  <img src="assets/img/new-3.png" alt="image" class="new__img">
+               </article>
+            </div>
+
+            <a href="#" class="new__button button">Ver mais produtos</a>
+         </div>
+      </section>
+
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about">
+         <div class="about__container container grid">
+            <div class="about__data">
+               <h2 class="section__title">Sobre o Brota Lá</h2>
+
+               <p class="about__description">
+                  O Brota Lá conecta você a pequenos produtores locais, garantindo acesso a produtos frescos, cultivados com cuidado e responsabilidade. Valorizamos práticas sustentáveis e buscamos levar saúde e qualidade à sua mesa.
+               </p>
+
+               <a href="#" class="button">Saiba Mais</a>
+            </div>
+            <img src="assets/img/about.jpg" alt="image" class="about__img">
+         </div>
+      </section>
+      
+      <!--==================== FAVORITES ====================-->
+      <section class="favorite section" id="favorite">
+         <h2 class="section__title">Produtos Mais Queridos</h2>
+
+         <div class="favorite__container container grid">
+            <article class="favorite__card">
+               <img src="assets/img/favorite-1.png" alt="" class="favorite__img">
+
+               <div class="favorite__data">
+                  <h2 class="favorite__title">Morangos</h2>
+                  <span class="favorite__subtitle">Frutas</span>
+                  <h3 class="favorite__price">$6.00</h3>
+               </div>
+
+               <button class="favorite__button button">
+                  <i class="ri-add-line"></i>
+               </button>
+            </article>
+
+            <article class="favorite__card">
+               <img src="assets/img/favorite-2.png" alt="" class="favorite__img">
+
+               <div class="favorite__data">
+                  <h2 class="favorite__title">Banana da Terra</h2>
+                  <span class="favorite__subtitle">Frutas</span>
+                  <h3 class="favorite__price">$4.00</h3>
+               </div>
+
+               <button class="favorite__button button">
+                  <i class="ri-add-line"></i>
+               </button>
+            </article>
+
+            <article class="favorite__card">
+               <img src="assets/img/favorite-3.png" alt="" class="favorite__img">
+
+               <div class="favorite__data">
+                  <h2 class="favorite__title">Tomate Italiano</h2>
+                  <span class="favorite__subtitle">Frutas</span>
+                  <h3 class="favorite__price">$6.00</h3>
+               </div>
+
+               <button class="favorite__button button">
+                  <i class="ri-add-line"></i>
+               </button>
+            </article>
+
+            <article class="favorite__card">
+               <img src="assets/img/favorite-4.png" alt="" class="favorite__img">
+
+               <div class="favorite__data">
+                  <h2 class="favorite__title">Abóbora Moranga</h2>
+                  <span class="favorite__subtitle">Legumes</span>
+                  <h3 class="favorite__price">$10.00</h3>
+               </div>
+
+               <button class="favorite__button button">
+                  <i class="ri-add-line"></i>
+               </button>
+            </article>
+
+            <article class="favorite__card">
+               <img src="assets/img/favorite-5.png" alt="" class="favorite__img">
+
+               <div class="favorite__data">
+                  <h2 class="favorite__title">Batata Inglesa</h2>
+                  <span class="favorite__subtitle">Legumes</span>
+                  <h3 class="favorite__price">$2.00</h3>
+               </div>
+
+               <button class="favorite__button button">
+                  <i class="ri-add-line"></i>
+               </button>
+            </article>
+
+            <article class="favorite__card">
+               <img src="assets/img/favorite-6.png" alt="" class="favorite__img">
+
+               <div class="favorite__data">
+                  <h2 class="favorite__title">Cebola</h2>
+                  <span class="favorite__subtitle">Legumes</span>
+                  <h3 class="favorite__price">$0.99</h3>
+               </div>
+
+               <button class="favorite__button button">
+                  <i class="ri-add-line"></i>
+               </button>
+            </article>
+         </div>
+      </section>
+
+      <!--==================== VISIT ====================-->
+      <section class="visit section" id="visit">
+         <div class="visit__container">
+            <img src="assets/img/visit-bg.jpg" alt="" class="visit__bg">
+            <div class="visit__shadow"></div>
+
+            <div class="visit__content container grid">
+               <div class="visit__data">
+                  <h2 class="section__title">Conheça os nossos Produtores</h2>
+
+                  <p class="visit__description">
+                     Agende uma visita às feiras ou entre em contato diretamente com os produtores. Queremos que você veja de perto o amor com que nossos produtos são cultivados.
+                  </p>
+
+                  <a href="#" class="button">Ver Locais</a>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <div>
+            <a href="#" class="footer__logo">Brota lá</a>
+            <p class="footer__description">De quem cultiva <br> pra quem valoriza.</p>
+         </div>
+
+         <div class="footer__content grid">
+            <div>
+               <h3 class="footer__title">Endereço</h3>
+               <ul class="footer__list">
+                  <li>
+                     <address class="footer__info">UTFPR - Campus Cornélio Procópio</address>
+                  </li>
+
+                  <li>
+                     <address class="footer__info">Av. Alberto Carazzai, 1640 - Centro, <br> Cornélio Procópio - PR, 86300-000</address>
+                  </li>
+               </ul>
+            </div>
+
+            <div>
+               <h3 class="footer__title">Contato</h3>
+               <ul class="footer__list">
+                  <li>
+                     <address class="footer__info">Letícia Marchioni dos Santos</address>
+                  </li>
+
+                  <li>
+                     <a href="https://br.linkedin.com/in/leticiamarchioni" target="_blank" class="footer__info">Currículo</a>
+                  </li>
+               </ul>
+            </div>
+
+            <div>
+               <h3 class="footer__title">Siga-nos nas Redes Sociais</h3>
+               <div class="footer__social">
+                  <a href="https://www.facebook.com/" target="_blank">
+                     <i class="ri-facebook-circle-line"></i>
+                  </a>
+
+                  <a href="https://www.instagram.com/" target="_blank">
+                     <i class="ri-instagram-line"></i>
+                  </a>
+
+                  <a href="https://www.youtube.com/" target="_blank">
+                     <i class="ri-youtube-line"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <span class="footer__copy">
+         &#169; Todos os direitos reservados
+      </span>
+
+   </footer>
+
+      <!--========== SCROLL UP ==========-->
+      <a href="#" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-line"></i>
+      </a>
       
       <!--=============== GSAP ===============-->
       <script src="assets/js/gsap.min.js"></script>
+
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="assets/js/scrollreveal.min.js"></script>
 
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>
