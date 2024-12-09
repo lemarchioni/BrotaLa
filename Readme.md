@@ -25,7 +25,7 @@ O **Brota Lá** está em fase de desenvolvimento, com melhorias e novas funciona
 1
 ## 📁 Acesso ao projeto
 
-Você pode acessar uma preview do projeto [*aqui*](https://github.com/lemarchioni/BrotaLa.git). Repositório:
+Você pode acessar uma preview do projeto [*aqui*](https://lemarchioni.github.io/BrotaLa/index.html). Repositório:
 
 ```bash
 https://lemarchioni.github.io/BrotaLa/
