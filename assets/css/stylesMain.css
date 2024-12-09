@@ -286,7 +286,7 @@ img {
 
 .home__button:hover {
   background: var(--white-color);
-  color: var(--gradient-color);
+  color: var(--first-color);
 }
 
 .home__images {
@@ -315,7 +315,7 @@ img {
 
 .button:hover {
   background: var(--white-color);
-  color: var(--gradient-color);
+  color: var(--first-color);
 }
 
 /*=============== NEW ===============*/
@@ -542,7 +542,7 @@ img {
   background-color: hsl(28, 12%, 15%);
 }
 
-;:-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: hsl(28, 12%, 25%);
 }
 
@@ -651,7 +651,7 @@ img {
   }
 }
 
-@media screen and (min-width: 768){
+@media screen and (min-width: 768px){
   .about__container {
     grid-template-columns: repeat(2, 350px);
     align-items: center;
