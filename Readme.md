@@ -21,8 +21,8 @@ Buscamos contribuir com os **Objetivos de Desenvolvimento Sustentável (ODS)**, 
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
-O **Brota Lá** está em fase de desenvolvimento, com melhorias e novas funcionalidades sendo adicionadas continuamente.
-1
+O **Brota Lá** está em fase de desenvolvimento, com melhorias e novas funcionalidades sendo adicionadas continuamente
+
 ## 📁 Acesso ao projeto
 
 Você pode acessar uma preview do projeto [*aqui*](https://lemarchioni.github.io/BrotaLa/index.html). Repositório:
@@ -30,7 +30,6 @@ Você pode acessar uma preview do projeto [*aqui*](https://lemarchioni.github.io
 ```bash
 https://lemarchioni.github.io/BrotaLa/
 ```
-
 
 ## 🛠️ Abrir e rodar o projeto
 
