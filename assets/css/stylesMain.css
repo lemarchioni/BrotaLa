@@ -9,8 +9,8 @@
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(142, 41%, 24%);
   --gradient-color: linear-gradient(90deg,
-                    hsl(142, 41%, 24%),
-                    hsl(89, 17%, 47%));
+                    hsl(143, 41%, 24%),
+                    hsl(88, 17%, 47%));
   --title-color: hsl(89, 17%, 47%);
   --text-color:  hsl(139, 22%, 17%);
   --white-color: hsl(0, 0%, 100%);
@@ -146,7 +146,7 @@ img {
 }
 
 .nav__logo {
-  width: 36px;
+  width: 4.5rem;
   transition: .4s;
 }
 
@@ -196,11 +196,6 @@ img {
   flex-direction: column;
   align-items: center;
   row-gap: .75rem;
-}
-
-.nav__buttons:hover {
-  background: var(--white-color);
-  color: var(--gradient-color);
 }
 
 .nav__button-link{
@@ -287,6 +282,11 @@ img {
   padding: 1rem 2rem;
   border-radius: .75rem;
   box-shadow: 0 24px 32px hsla(210, 54%, 24%, .3);
+}
+
+.home__button:hover {
+  background: var(--white-color);
+  color: var(--gradient-color);
 }
 
 .home__images {
@@ -704,7 +704,7 @@ img {
   }
 
   .nav__logo {
-    width: 48px;
+    width: 5rem;
   }
 
   .home__content {
@@ -848,297 +848,4 @@ img {
     height: 1200px;
     padding-top: 15rem;
   }
-}
-
-/*======================= FORMS ========================*/
-
-.main__forms {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.box {
-  position: relative;
-  width: 100%;
-  max-width: 1080px;
-  height: 640px;
-  background-color: var(--white-color);
-  border-radius: 3.3rem;
-  box-shadow: 0 10px 40px -30px rgba(0, 0, 0, 0.27);
-  transition: 0.3s;
-}
-
-.inner__box {
-  position: absolute;
-  width: calc(100% - 4.1rem);
-  height: calc(100% - 4.1rem);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.forms__wrap {
-  position: absolute;
-  height: 100%;
-  width: 45%;
-  top: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  transition: 0.8s ease-in-out;
-}
-
-form {
-  max-width: 260px;
-  width: 100%;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  transition: opacity 0.02s 0.4s;
-}
-
-.heading h2 {
-  font-family: var(--second-font);
-  font-size: var(--h2-font-size);
-  font-weight: bold;
-  line-height: 2.45rem;
-  color: var(--title-color);
-  transition: 0.3s;
-}
-
-.heading h6 {
-  color: var(--first-color);
-  font-weight: 400;
-  font-size: 0.75rem;
-  display: inline;
-}
-
-.heading__toggle {
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.heading__toggle:hover {
-  color: var(--first-color);
-}
-
-.input__wrap {
-  position: relative;
-  height: 37px;
-  margin-bottom: 2.2rem;
-}
-
-.input__field {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: none;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid var(--text-color);
-  padding: 0;
-  font-size: 0.95rem;
-  color: var(--first-color);
-  transition: 0.4s;
-}
-
-.text__label {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.95rem;
-  color: var(--text-color);
-  pointer-events: none;
-  transition: 0.4s;
-}
-
-.input__field.active {
-  border-bottom-color: var(--first-color);
-}
-
-.input__field.active + label {
-  font-size: 0.75rem;
-  top: -2px;
-}
-
-.icon {
-  float: right;
-  height: 37px;
-  position: relative;
-  font-size: 20px;
-  padding-top: 5px;
-  color: var(--text-color);
-}
-
-.error__msg {
-  display: none;
-  font-size: 0.73rem;
-  color: #ff2851;
-  padding-top: 2.5rem;
-  line-height: 0.85rem;
-}
-
-.warning__msg {
-  display: none;
-  font-size: 0.73rem;
-  color: hsl(349, 100%, 58%);
-  background-color: hsl(355, 100%, 93%);
-  border-radius: 5px;
-  padding: 5px;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.atention {
-  font-weight: 600;
-}
-
-.sign__btn{
-  display: inline-block;
-  width: 100%;
-  height: 43px;
-  background: var(--gradient-color);
-  color: var(--white-color);
-  border: none;
-  cursor: pointer;
-  border-radius: 0.8rem;
-  font: inherit;
-  font-size: 0.8rem;
-  margin-bottom: 2rem;
-  transition: 0.3s;
-}
-
-.sign__btn:hover {
-  background: var(--body-color);
-  color: var(--gradient-color);
-}
-
-.text {
-  color: var(--text-color);
-  font-size: 0.7rem;
-}
-
-.text a {
-  color: var(--text-color);
-  transition: 0.3s;
-}
-
-.text a:hover {
-  color: var(--main-color-2);
-}
-
-.emphasis {
-  color: var(--text-color);
-  transition: 0.3s;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.emphasis:hover {
-  color: var(--main-color-2);
-}
-
-/*======================= GET STARTED NOW ========================*/
-
-.sign__up {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.sign__up form.sign__in {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.sign__up .sign-up-form {
-  opacity: 1;
-  pointer-events: all;
-}
-
-main.sign__up .forms__wrap {
-  left: 55%;
-}
-
-main.sign__up .carousel {
-  left: 0%;
-}
-
-.carousel {
-  position: absolute;
-  height: 100%;
-  width: 55%;
-  left: 45%;
-  top: 0;
-  background-color: var(--shape-color);
-  border-radius: 2rem;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  padding-bottom: 2rem;
-  overflow: hidden;
-  transition: 0.8s ease-in-out, 0.3s background-color;
-}
-
-.images__wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-
-.image {
-  width: 100%;
-  grid-column: 1/2;
-  grid-row: 1/2;
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.5s;
-}
-
-.img-1 {
-  transform: translate(0, -50px);
-}
-
-.img-2 {
-  transform: scale(0.4, 0.5);
-}
-
-.image.show {
-  opacity: 1;
-  transform: none;
-}
-
-.bullets {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bullets span {
-  display: block;
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: var(--text-color);
-  margin: 0 0.25rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.bullets span.active {
-  width: 1.1rem;
-  background-color: var(--main-color-1);
-  border-radius: 1rem;
 }

@@ -1,0 +1,528 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700;800;900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(142, 41%, 24%);
+  --gradient-color: linear-gradient(90deg,
+                    hsl(142, 41%, 24%),
+                    hsl(89, 17%, 47%));
+  --title-color: hsl(89, 17%, 47%);
+  --text-color:  hsl(139, 22%, 17%);
+  --white-color: hsl(0, 0%, 100%);
+  --body-color: hsl(50, 63%, 93%);
+  --container-color: hsl(0, 0%, 10%);
+  --alert: hsl(355, 100%, 93%);
+  --alert-text: hsl(349, 100%, 58%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Dancing Script", cursive;
+  --biggest-font-size: 2.5rem;
+  --bigger-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 5rem;
+    --bigger-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  font-weight: var(--font-medium);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  font-size: var(--bigger-font-size);
+  font-family: var(--second-font);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.main {
+  overflow: hidden; /* For animations */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header__form {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  pointer-events: none;
+}
+
+.nav__form {
+  height: calc(var(--header-height) + 2rem);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav__logo {
+  width: 5rem;
+  transition: .4s;
+  pointer-events: all;
+}
+
+
+/*=============== FORMS ===============*/
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--body-color);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  height: 640px;
+  background-color: var(--white-color);
+  border-radius: 3.3rem;
+  box-shadow: 0 10px 40px -30px rgba(0, 0, 0, 0.27);
+  transition: 0.3s;
+}
+
+.inner__box {
+  position: absolute;
+  width: calc(100% - 4.1rem);
+  height: calc(100% - 4.1rem);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.forms__wrap {
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transition: 0.8s ease-in-out;
+}
+
+.sign__up,
+.sign__in {
+  max-width: 260px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  transition: opacity 0.02s 0.4s;
+}
+
+.sign__up {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.heading__title {
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  line-height: 2.45rem;
+  transition: 0.3s;
+}
+
+.heading__subtitle {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 0.75rem;
+  display: inline;
+}
+
+.toggle {
+  color: var(--title-color);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.toggle:hover {
+  color: var(--first-color);
+}
+
+.input__wrap {
+  position: relative;
+  height: 37px;
+  margin-bottom: 2.2rem;
+}
+
+.input__field {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--text-color);
+  padding: 0;
+  font-size: 0.95rem;
+  color: var(--title-color);
+  transition: 0.4s;
+}
+
+.label__forms {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: var(--text-color);
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.input__field.active {
+  border-bottom-color: var(--title-color);
+}
+
+.input__field.active + label {
+  font-size: 0.75rem;
+  top: -2px;
+}
+
+.icon {
+  float: right;
+  height: 37px;
+  position: relative;
+  font-size: 20px;
+  padding-top: 5px;
+  color: var(--text-color);
+}
+
+.error__msg {
+  display: none;
+  font-size: 0.73rem;
+  color: #ff2851;
+  padding-top: 2.5rem;
+  line-height: 0.85rem;
+}
+
+.warning__msg {
+  display: none;
+  font-size: 0.73rem;
+  color: var(--alert-text);
+  background-color: var(--alert);
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.atention {
+  font-weight: 600;
+}
+
+.sign__btn {
+  display: inline-block;
+  width: 100%;
+  height: 43px;
+  background: var(--gradient-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font: inherit;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  transition: 0.3s;
+}
+
+.sign__btn:hover {
+  background: var(--body-color);
+  color: var(--text-color);
+}
+
+.text {
+  color: var(--text-color);
+  font-size: 0.7rem;
+}
+
+.text a {
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.text a:hover {
+  color: var(--title-color);
+}
+
+.emphasis {
+  color: var(--text-color);
+  transition: 0.3s;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.emphasis:hover {
+  color: var(--title-color);
+}
+
+.sign-up-mode .sign__in {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sign-up-mode .sign__up{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sign-up-mode .forms__wrap {
+  left: 55%;
+}
+
+.sign-up-mode .carousel {
+  left: 0%;
+}
+
+.carousel {
+  position: relative;
+  height: 100%;
+  width: 55%;
+  left: 45%;
+  top: 0;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.8s ease-in-out;
+}
+
+.images__wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image.show {
+  opacity: 1;
+  transform: none;
+  z-index: 1;
+}
+
+.bullets {
+  position: relative; 
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.bullets span {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--white-color);
+  margin: 0 0.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bullets span.active {
+  width: 1.1rem;
+  background-color: var(--body-color);
+  border-radius: 1rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+
+@media (max-width: 850px) {
+  .box {
+    height: auto;
+    max-width: 550px;
+    overflow: hidden;
+  }
+
+  .inner__box {
+    position: static;
+    transform: none;
+    width: revert;
+    height: revert;
+    padding: 2rem;
+  }
+
+  .forms__wrap {
+    position: revert;
+    width: 100%;
+    height: auto;
+  }
+
+  form {
+    max-width: revert;
+    padding: 1.5rem 2.5rem 2rem;
+    transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+  }
+
+  .heading {
+    margin: 2rem 0;
+  }
+
+  .sign__up {
+    transform: translateX(100%);
+  }
+
+  .sign-up-mode .sign__in {
+    transform: translateX(-100%);
+  }
+
+  .sign-up-mode .sign__up {
+    transform: translateX(0%);
+  }
+
+  .carousel {
+    position: revert;
+    height: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+  }
+
+  .images__wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 530px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .box {
+    border-radius: 2rem;
+  }
+
+  .inner__box {
+    padding: 1rem;
+  }
+
+  .carousel {
+    padding: 1.5rem 1rem;
+    border-radius: 1.6rem;
+  }
+
+  .sign__up,
+  .sign__in {
+    padding: 1rem 2rem 1.5rem;
+  }
+}

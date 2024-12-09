@@ -98,14 +98,11 @@ sr.reveal('.favorite__card img', { interval: 100, rotate: { z: 15 }, distance: 0
 sr.reveal('.footer__container', { scale: 1 })
 
 /*=============== FORMS ===============*/
-
 const inputs = document.querySelectorAll(".input__field");
-const toggle = document.querySelectorAll(".heading__toggle");
-const main = document.querySelector("main__forms");
+const toggle = document.querySelectorAll(".toggle");
+const main = document.querySelector(".main");
 const bullets = document.querySelectorAll(".bullets span");
 const images = document.querySelectorAll(".image");
-
-const toggle_btn = document.querySelector(".toggle-btn");
 
 inputs.forEach((inp) => {
   inp.addEventListener("focus", () => {
@@ -129,9 +126,6 @@ function moveSlider() {
   let currentImage = document.querySelector(`.img-${index}`);
   images.forEach((img) => img.classList.remove("show"));
   currentImage.classList.add("show");
-
-  const textSlider = document.querySelector(".text__group");
-  textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
 
   bullets.forEach((bull) => bull.classList.remove("active"));
   this.classList.add("active");
