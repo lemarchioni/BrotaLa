@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+        
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/stylesAdmin.css">
+
+        <title>Brota lá</title>
+    </head>
+
+<body>
+
+  <section>
+    <span class="overlay active"></span>
+
+    <div class="modal-box">
+      <i class="ri-alert-line"></i>
+      <h2>Tem certeza?</h2>
+      <h3>Esta ação é irreversível e removerá permanentemente todas as informações armazenadas.</h3>
+
+      <div class="buttons">
+        <button class="close-btn">Cancelar</button>
+        <button>Excluir tudo</button>
+      </div>
+    </div>
+  </section>
+
+  <!--==================== HEADER ====================-->
+  <header class="header" id="header">
+    <nav class="nav__container">
+       <a href="#" class="nav__logo">
+          <img src="assets/img/logo.svg" alt="logo">
+       </a>
+
+       <div class="nav__menu" id="nav-menu">
+          <div class="nav__buttons">
+             <a href="index.html" class="home__button">Sair</a>
+          </div>
+
+          <!-- Close button -->
+           <div class="nav__close" id="nav-close">
+             <i class="ri-close-line"></i>
+           </div>
+       </div>
+
+       <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+       </div>
+    </nav>
+ </header>
+
+ 
+   <div class="container">
+
+      <main>
+           <h1>Dashbord</h1>
+
+           <div class="date">
+             <input type="date" >
+           </div>
+
+        <div class="insights">
+
+           <!-- start seling -->
+            <div class="sales">
+               <span><i class="ri-user-3-line"></i></span>
+               <div class="middle">
+
+                 <div class="left">
+                   <h3>Usuários Cadastrados</h3>
+                   <h2>4</h2>
+                 </div>
+
+               </div>
+               <small>No total</small>
+            </div>
+           <!-- end seling -->
+              <!-- start expenses -->
+              <div class="expenses">
+                <span><i class="ri-user-add-line"></i></span>
+                <div class="middle">
+ 
+                  <div class="left">
+                    <h3>Usuários Cadastrados</h3>
+                    <h2>2</h2>
+                  </div>
+ 
+                </div>
+                <small>Nas últimas 24 horas</small>
+             </div>
+            <!-- end seling -->
+               <!-- start seling -->
+               <div class="income">
+                <span><i class="ri-line-chart-line"></i></span>
+                <div class="middle">
+ 
+                  <div class="left">
+                    <h3>Taxa de Crescimento de Usuários</h3>
+                    <h2>50%</h2>
+                  </div>
+ 
+                </div>
+                <small>Nas últimas 24 horas</small>
+             </div>
+            <!-- end seling -->
+
+        </div>
+       <!-- end insights -->
+      <div class="recent__order">
+         <h2>Usuários Cadastrados</h2>
+         <table> 
+             <thead>
+              <tr>
+                <th>Username</th>
+                <th>CPF</th>
+                <th>Email</th>
+                <th>Data do Cadastro</th>
+                <th>Ação</th>
+              </tr>
+             </thead>
+              <tbody>
+                 <tr>
+                   <td>Teste</td>
+                   <td>000.000.000-74</td>
+                   <td>teste@gmail.com</td>
+                   <td>04/02/2025</td>
+                   <td class="delete"><i class="ri-delete-bin-6-line"></i></td>
+                 </tr>
+                 <tr>
+                  <td>Teste</td>
+                  <td>000.000.000-74</td>
+                  <td>teste@gmail.com</td>
+                  <td>04/02/2025</td>
+                  <td class="delete"><i class="ri-delete-bin-6-line"></i></td>
+                </tr>
+                <tr>
+                  <td>Teste</td>
+                   <td>000.000.000-74</td>
+                   <td>teste@gmail.com</td>
+                   <td>04/02/2025</td>
+                   <td class="delete"><i class="ri-delete-bin-6-line"></i></td>
+                </tr>
+                <tr>
+                  <td>Teste 2</td>
+                   <td>000.000.000-74</td>
+                   <td>teste@gmail.com</td>
+                   <td>04/02/2025</td>
+                   <td class="delete"><i class="ri-delete-bin-6-line"></i></td>
+                </tr>
+              </tbody>
+         </table>
+      </div>
+
+      </main>
+      <!------------------
+         end main
+        ------------------->
+
+      <!----------------
+        start right main 
+      ---------------------->
+    <div class="right">
+
+
+   <div class="analytics">
+     <h2>Algumas Análises</h2>
+
+      <div class="item onlion">
+        <div class="icon">
+          <span><i class="ri-login-box-line"></i></span>
+        </div>
+        <div class="right__text">
+          <div class="info">
+            <h3>Logins Realizados</h3>
+            <small class="text-muted">No total</small>
+          </div>
+          <h3 class="info__user">3</h3>
+        </div>
+      </div>
+      <div class="item onlion">
+        <div class="icon">
+          <span><i class="ri-user-shared-line"></i></span>
+        </div>
+        <div class="right__text">
+          <div class="info">
+            <h3>Primeiro</h3>
+            <small class="text-muted">Usuário Cadastrado</small>
+          </div>
+          <h3 class="first__user">Teste</h3>
+        </div>
+      </div>
+      <div class="item onlion">
+        <div class="icon">
+          <span><i class="ri-user-received-line"></i></span>
+        </div>
+        <div class="right__text">
+          <div class="info">
+            <h3>Último</h3>
+            <small class="text-muted">Usuário Cadastrado</small>
+          </div>
+          <h3 class="last__user">Teste 2</h3>
+        </div>
+      </div>
+</div>
+
+      <div class="item add__user show-modal">
+            <div>
+            <a><i class="ri-delete-bin-6-line"></i>Excluir Tudo</a>
+            </div>
+     </div>
+
+
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/jsAdmin.js"></script>
+   <script src="assets/js/admin.js"></script>
+
+</body>
+</html>

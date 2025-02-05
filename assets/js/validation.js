@@ -15,18 +15,21 @@ function checkerUser() {
         icon1.style.color = '#2ecc71';
         usernameError.style.display = 'none';
         emptyUsernameError.style.display = 'none';
+        return true;  // Adicionando retorno booleano
     }
     else if(usernameInput.value.length == 0){
         icon1.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon1.style.color = '#ff2851';
         usernameError.style.display = 'none';
         emptyUsernameError.style.display = 'block';
+        return false; // Adicionando retorno booleano
     }
     else{
         icon1.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon1.style.color = '#ff2851';
         usernameError.style.display = 'block';
         emptyUsernameError.style.display = 'none';
+        return false; // Adicionando retorno booleano
     }
 }
 
@@ -112,18 +115,21 @@ function checkerEmail() {
         icon2.style.color = '#2ecc71';
         emailError.style.display = 'none';
         emptyEmailError.style.display = 'none';
+        return true; // Adicionando retorno booleano
     }
     else if(emailInput.value.length == 0){
         icon2.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon2.style.color = '#ff2851';
         emailError.style.display = 'none';
         emptyEmailError.style.display = 'block';
+        return false; // Adicionando retorno booleano
     }
     else{
         icon2.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon2.style.color = '#ff2851';
         emailError.style.display = 'block';
         emptyEmailError.style.display = 'none';
+        return false; // Adicionando retorno booleano
     }
 }
 
@@ -143,18 +149,21 @@ function checkerPass() {
         icon3.style.color = '#2ecc71';
         passwordError.style.display = 'none';
         emptyPasswordError.style.display = 'none';
+        return true; // Adicionando retorno booleano
     }
     else if(passwordInput.value.length == 0){
         icon3.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon3.style.color = '#ff2851';
         passwordError.style.display = 'none';
         emptyPasswordError.style.display = 'block';
+        return false; // Adicionando retorno booleano
     }
     else{
         icon3.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon3.style.color = '#ff2851';
         passwordError.style.display = 'block';
         emptyPasswordError.style.display = 'none';
+        return false; // Adicionando retorno booleano
     }
 }
 
@@ -172,18 +181,21 @@ function checkerVerify() {
         icon4.style.color = '#2ecc71';
         verifyError.style.display = 'none';
         emptyVerifyError.style.display = 'none';
+        return true; // Adicionando retorno booleano
     }
     else if(verifyInput.value.length == 0){
         icon4.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon4.style.color = '#ff2851';
         verifyError.style.display = 'none';
         emptyVerifyError.style.display = 'block';
+        return false; // Adicionando retorno booleano
     }
     else{
         icon4.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon4.style.color = '#ff2851';
         verifyError.style.display = 'block';
         emptyVerifyError.style.display = 'none';
+        return false; // Adicionando retorno booleano
     }
 
 }
@@ -328,4 +340,55 @@ function checkerFormLogin() {
         warningSubmitLogin.style.display = "none";
     }
     
+}
+
+/* ----------------------- LocalStorage ----------------------- */
+function getUsers() {
+    return JSON.parse(localStorage.getItem("usuarios")) || [];
+}
+
+function saveUser(user) {
+    let users = getUsers();
+    
+    // Verifica se o username, CPF ou email já existem
+    const existingUser = users.find(
+        (u) => u.username === user.username || u.cpf === user.cpf || u.email === user.email
+    );
+
+    if (existingUser) {
+        if (existingUser.username === user.username) {
+            alert("Este username já está cadastrado!");
+        } else if (existingUser.cpf === user.cpf) {
+            alert("Este CPF já está cadastrado!");
+        } else if (existingUser.email === user.email) {
+            alert("Este email já está cadastrado!");
+        }
+        return false;
+    }
+
+    users.push(user);
+    localStorage.setItem("usuarios", JSON.stringify(users));
+    return true;
+}
+
+function checkerForm() {
+    if (!checkerUser() || !checkerCPF() || !checkerEmail() || !checkerPass() || !checkerVerify()) {
+        warningSubmit.style.display = "block";
+        setTimeout(() => (warningSubmit.style.display = "none"), 3000);
+        return;
+    }
+
+    const newUser = {
+        username: usernameInput.value.trim(),
+        cpf: cpfInput.value.trim(),
+        email: emailInput.value.trim(),
+        password: passwordInput.value.trim(),
+        dataCadastro: new Date().toLocaleDateString("pt-BR")
+    };
+
+    if (saveUser(newUser)) {
+        alert("Cadastro realizado com sucesso!");
+        document.querySelector(".sign__up").reset();
+        window.location.href = "admin.html"; // Redireciona para a página de admin após o cadastro
+    }
 }
