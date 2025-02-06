@@ -281,18 +281,21 @@ function checkerLogin() {
         icon5.style.color = '#2ecc71';
         loginError.style.display = 'none';
         emptyLoginError.style.display = 'none';
+        return true; // Adicionando retorno booleano
     }
     else if(loginInput.value.length == 0){
         icon5.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon5.style.color = '#ff2851';
         loginError.style.display = 'none';
         emptyLoginError.style.display = 'block';
+        return false; // Adicionando retorno booleano
     }
     else{
         icon5.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon5.style.color = '#ff2851';
         loginError.style.display = 'block';
         emptyLoginError.style.display = 'none';
+        return false; // Adicionando retorno booleano
     }
 }
 
@@ -312,18 +315,21 @@ function checkerPassLogin() {
         icon6.style.color = '#2ecc71';
         passLoginError.style.display = 'none';
         emptyPassError.style.display = 'none';
+        return true; // Adicionando retorno booleano
     }
     else if(passLoginInput.value.length == 0){
         icon6.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon6.style.color = '#ff2851';
         passLoginError.style.display = 'none';
         emptyPassError.style.display = 'block';
+        return false; // Adicionando retorno booleano
     }
     else{
         icon6.innerHTML = '<i class="ri-error-warning-line"></i>';
         icon6.style.color = '#ff2851';
         passLoginError.style.display = 'block';
         emptyPassError.style.display = 'none';
+        return false; // Adicionando retorno booleano
     }
 }
 
@@ -389,6 +395,44 @@ function checkerForm() {
     if (saveUser(newUser)) {
         alert("Cadastro realizado com sucesso!");
         document.querySelector(".sign__up").reset();
-        window.location.href = "admin.html"; // Redireciona para a página de admin após o cadastro
     }
 }
+
+/* ----------------------- Logar ----------------------- */
+function loginUser(username, password) {
+    let users = getUsers();
+
+    // Verifica se o username existe e a senha corresponde
+    const user = users.find((u) => u.username === username);
+
+    if (!user) {
+        alert("Usuário não encontrado!");
+        return false;
+    }
+
+    if (user.password !== password) {
+        alert("Senha incorreta!");
+        return false;
+    }
+
+    // Armazena a sessão do usuário logado
+    localStorage.setItem("usuarioLogado", JSON.stringify(user));
+    return true;
+}
+
+function checkerFormLogin() {
+    let username = loginInput.value.trim();
+    let password = passLoginInput.value.trim();
+
+    if (!checkerLogin() || !checkerPassLogin()) {
+        warningSubmitLogin.style.display = "block";
+        setTimeout(() => (warningSubmitLogin.style.display = "none"), 3000);
+        return;
+    }
+
+    if (loginUser(username, password)) {
+        alert("Login realizado com sucesso!");
+        window.location.href = "admin.html"; // Redireciona para o painel admin
+    }
+}
+

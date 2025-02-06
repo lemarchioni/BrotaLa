@@ -41,6 +41,7 @@ const section = document.querySelector("section"),
         overlay = document.querySelector(".overlay"),
         showBtn = document.querySelector(".show-modal"),
         closeBtn = document.querySelector(".close-btn");
+        delBtn = document.querySelector(".del-btn");
 
         showBtn.addEventListener("click", () => {
             section.classList.add("active");
@@ -53,6 +54,11 @@ const section = document.querySelector("section"),
         });
         
         closeBtn.addEventListener("click", () => {
+            section.classList.remove("active");
+            document.body.style.overflowY = "auto"; // Permite a rolagem novamente
+        });
+
+        delBtn.addEventListener("click", () => {
             section.classList.remove("active");
             document.body.style.overflowY = "auto"; // Permite a rolagem novamente
         });
