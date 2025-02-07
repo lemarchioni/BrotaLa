@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const newUsers = document.querySelector(".expenses h2"); // Contador de novos usuários (últimas 24h)
     const firstUser = document.querySelector(".first__user"); // Primeiro usuário
     const lastUser = document.querySelector(".last__user"); // Último usuário
+    const dateFilter = document.querySelector(".date input"); //Filtro por data
 
     function getUsers() {
         return JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    function loadUsers() {
+    function loadUsers(filterDate = null) {
         // console.log("Tentando carregar usuários...");
         const users = getUsers();
         // console.log("Usuários encontrados:", users);
@@ -96,8 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (users.length === 0) {
             usersTableBody.innerHTML = "<tr><td colspan='4'>Nenhum usuário cadastrado.</td></tr>";
-
-
 
             totalUsers.textContent = "0";
             newUsers.textContent = "0";
@@ -117,9 +116,15 @@ document.addEventListener("DOMContentLoaded", function () {
         let newUsersCount = 0;
         const today = new Date().toLocaleDateString("pt-BR");
 
-        users.forEach((user) => {
-            const row = document.createElement("tr");
+        const filteredUsers = filterDate ? users.filter(user => user.dataCadastro === filterDate) : users;
 
+        if (filteredUsers.length === 0) {
+            usersTableBody.innerHTML = "<tr><td colspan='5'>Não há registros correspondentes para a data selecionada.</td></tr>";
+            return;
+        }
+
+        filteredUsers.forEach(user => {
+            const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${user.username}</td>
                 <td>${user.cpf}</td>
@@ -127,17 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${user.dataCadastro}</td>
                 <td class="delete" data-username="${user.username}"><i class="ri-delete-bin-6-line"></i></td>
             `;
-
             usersTableBody.appendChild(row);
 
-            console.log("Criado botão de exclusão para:", user.username, row.querySelector(".delete"));
-
-            // Contar usuários cadastrados hoje
             if (user.dataCadastro === today) {
                 newUsersCount++;
             }
-            // Atualizar contadores do dashboard
-            if (totalUsers) totalUsers.textContent = users.length;
         });
 
         //Taxa de crescimento dos usuários
@@ -152,6 +151,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (firstUser) firstUser.textContent = users.length > 0 ? users[0].username : "-";
         if (lastUser) lastUser.textContent = users.length > 0 ? users[users.length - 1].username : "-";
     }
+
+    dateFilter.addEventListener("change", function () {
+        const selectedDate = dateFilter.value.split("-").reverse().join("/");
+        loadUsers(selectedDate);
+    });
 
     loadUsers(); // Carregar usuários ao abrir a página
 });
