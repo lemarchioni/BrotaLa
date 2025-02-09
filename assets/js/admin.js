@@ -53,8 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const usersTableBody = document.querySelector("tbody"); // Corpo da tabela de usuários
     const totalUsers = document.querySelector(".sales h2"); // Contador total de usuários
@@ -62,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const firstUser = document.querySelector(".first__user"); // Primeiro usuário
     const lastUser = document.querySelector(".last__user"); // Último usuário
     const dateFilter = document.querySelector(".date input"); //Filtro por data
+    const searchInput = document.querySelector(".searchInput"); // Campo de pesquisa
 
     function getUsers() {
         return JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -88,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    function loadUsers(filterDate = null) {
+    function loadUsers(filterDate = null, searchQuery = "") {
         // console.log("Tentando carregar usuários...");
         const users = getUsers();
         // console.log("Usuários encontrados:", users);
@@ -116,10 +115,23 @@ document.addEventListener("DOMContentLoaded", function () {
         let newUsersCount = 0;
         const today = new Date().toLocaleDateString("pt-BR");
 
-        const filteredUsers = filterDate ? users.filter(user => user.dataCadastro === filterDate) : users;
+        let filteredUsers = users;
+
+        if (filterDate) {
+            filteredUsers = filteredUsers.filter(user => user.dataCadastro === filterDate);
+        }
+
+        if (searchQuery) {
+            searchQuery = searchQuery.toLowerCase();
+            filteredUsers = filteredUsers.filter(user =>
+                user.username.toLowerCase().includes(searchQuery) ||
+                user.cpf.toLowerCase().includes(searchQuery) ||
+                user.email.toLowerCase().includes(searchQuery)
+            );
+        }
 
         if (filteredUsers.length === 0) {
-            usersTableBody.innerHTML = "<tr><td colspan='5'>Não há registros correspondentes para a data selecionada.</td></tr>";
+            usersTableBody.innerHTML = "<tr><td colspan='5'>Nenhum usuário encontrado.</td></tr>";
             return;
         }
 
@@ -154,7 +166,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dateFilter.addEventListener("change", function () {
         const selectedDate = dateFilter.value.split("-").reverse().join("/");
-        loadUsers(selectedDate);
+        loadUsers(selectedDate, searchInput.value);
+    });
+
+    searchInput.addEventListener("input", function () {
+        loadUsers(dateFilter.value ? dateFilter.value.split("-").reverse().join("/") : null, searchInput.value);
     });
 
     loadUsers(); // Carregar usuários ao abrir a página

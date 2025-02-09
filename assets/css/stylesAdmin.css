@@ -353,6 +353,12 @@ section.active .modal-box {
   color: var(--text-color);
  }
 
+ .filters {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+ }
+
  main .date{
   display: inline-block;
   background: var(--white-color);
@@ -360,6 +366,48 @@ section.active .modal-box {
   margin-top: 1rem;
   padding: 0.5rem 1.6rem;
  }
+
+ .searchBox {
+  display: inline-block;
+  background: var(--white-color);
+  margin-top: 1rem;
+  border-radius: var(--border-radius-1);
+  padding: 0.5rem 1.6rem;
+  width: 100%;
+}
+
+.searchButton {
+  float: right;
+  padding: .5rem;
+  border-radius: var(--border-radius-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  align-items: center;
+  color: var(--text-color);
+  transition: 0.4s;
+  width: 90%;
+}
+
+/* Remove o botão de limpar no Chrome, Safari e Edge */
+.searchInput::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Remove o botão de limpar no Firefox */
+.searchInput[type="search"]::-moz-search-clear {
+  display: none;
+}
+
+/* Remove o botão de limpar no Microsoft Edge */
+.searchInput::-ms-clear {
+  display: none;
+}
 
 main .insights{
    display: grid;
